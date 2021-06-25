@@ -1,11 +1,17 @@
 $(document).ready(function() {
+    var weekStart, weekEnd;
    $("#weekpicker").datepicker({
        showOtherMonths:true,
        selectOtherMonths:true,
        onSelect:function(selectedDate, instance){
-           console.log(selectedDate);
            var myDate = new Date(selectedDate);
-           console.log(MyDate);
+           weekStart = new Date(myDate.getFullYear(),
+           myDate.getMonth(), myDate.getDate()-
+           myDate.getDay());
+           weekEnd = new Date(myDate.getFullYear(),
+           myDate.getMonth(), myDate.getDate()-
+           myDate.getDay()+6);
+           console.log(weekEnd);
        }
    });
 });
