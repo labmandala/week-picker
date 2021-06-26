@@ -11,7 +11,9 @@ $(document).ready(function() {
            weekEnd = new Date(myDate.getFullYear(),
            myDate.getMonth(), myDate.getDate()-
            myDate.getDay()+6);
-           console.log(weekEnd);
+           var dateFormat = "dd/mm/yy";
+           $("#start").text($.datepicker.formatDate(dateFormat, weekStart));
+           $("#end").text($.datepicker.formatDate(dateFormat, weekEnd));
        }
    });
 });
