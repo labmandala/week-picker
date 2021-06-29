@@ -14,6 +14,12 @@ $(document).ready(function() {
            var dateFormat = "dd/mm/yy";
            $("#start").text($.datepicker.formatDate(dateFormat, weekStart));
            $("#end").text($.datepicker.formatDate(dateFormat, weekEnd));
+       },
+       beforeShowDay:function(date){
+           var cssClass = "";
+           if(date >= weekStart && date <= weekEnd)
+           css = "ui-datepicker-current-day";
+           return [true, cssClass];
        }
    });
 });
