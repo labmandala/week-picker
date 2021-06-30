@@ -1,5 +1,8 @@
 $(document).ready(function() {
     var weekStart, weekEnd;
+    function completeWeek() {
+        $(".ui-datepicker-current-day a").addClass("ui-state-active");
+    }
    $("#weekpicker").datepicker({
        showOtherMonths:true,
        selectOtherMonths:true,
@@ -14,6 +17,7 @@ $(document).ready(function() {
            var dateFormat = "dd/mm/yy";
            $("#start").text($.datepicker.formatDate(dateFormat, weekStart));
            $("#end").text($.datepicker.formatDate(dateFormat, weekEnd));
+           completeWeek();
        },
        beforeShowDay:function(date){
            var cssClass = "";
