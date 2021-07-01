@@ -1,7 +1,9 @@
 $(document).ready(function() {
     var weekStart, weekEnd;
     function completeWeek() {
-        $(".ui-datepicker-current-day a").addClass("ui-state-active");
+        window.setTimeout(function(){
+            $(".ui-datepicker-current-day a").addClass("ui-state-active");
+        },1);
     }
    $("#weekpicker").datepicker({
        showOtherMonths:true,
@@ -22,11 +24,11 @@ $(document).ready(function() {
        beforeShowDay:function(date){
            var cssClass = "";
            if(date >= weekStart && date <= weekEnd)
-           css = "ui-datepicker-current-day";
+           cssClass = "ui-datepicker-current-day";
            return [true, cssClass];
        }
    });
 });
-
+ 
 
 
