@@ -22,10 +22,14 @@ $(document).ready(function() {
            completeWeek();
        },
        beforeShowDay:function(date){
+           console.log(date);
            var cssClass = "";
            if(date >= weekStart && date <= weekEnd)
            cssClass = "ui-datepicker-current-day";
            return [true, cssClass];
+       },
+       onChangeMonthYear:function(){
+           completeWeek();
        }
    });
 });
